@@ -4,7 +4,7 @@ import { WordList } from '../lists/model';
 import { Word } from '../words/model';
 import { UserPreferences } from '../preferences/model';
 import { QuestionType } from '../../types';
-import { quizAgentService } from './agent-service';
+import { quizServiceAdapter } from './adapter';
 import { shuffleArray } from '../../utils/arrayUtils';
 import { listIdSchema, updatePointsSchema } from './schemas';
 
@@ -42,7 +42,7 @@ router.post('/:listId/start', validate(listIdSchema), async (req, res) => {
     const transformed = transformWords(words, listId);
     const shuffled = transformed.sort(() => Math.random() - 0.5);
     const questionTypes = await getQuestionTypes(req.headers['user-id'] as string);
-    const questions = await quizAgentService.generateQuestions(shuffled.slice(0, 5), list.context || 'General', questionTypes);
+    const questions = await quizServiceAdapter.generateQuestions(shuffled.slice(0, 5), list.context || 'General', questionTypes);
 
     res.json({ 
       questions,
@@ -69,7 +69,7 @@ router.post('/:listId/more', validate(listIdSchema), async (req, res) => {
     const transformed = transformWords(words, listId);
     const selected = shuffleArray(transformed).slice(0, 5);
     const questionTypes = await getQuestionTypes(req.headers['user-id'] as string);
-    const questions = await quizAgentService.generateQuestions(selected, list.context || 'General', questionTypes);
+    const questions = await quizServiceAdapter.generateQuestions(selected, list.context || 'General', questionTypes);
 
     res.json({ questions });
   } catch (error) {

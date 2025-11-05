@@ -1,0 +1,26 @@
+[
+  {
+    "sentence": "She decided to run for president next year.",
+    "translation": "Decidió postularse para presidente el próximo año.",
+    "context": "politics",
+    "difficulty": "intermediate",
+    "audio_file": "run_politics_001.mp3",
+    "context_note": "Political candidacy"
+  },
+  {
+    "sentence": "Can you run this program on your computer?",
+    "translation": "¿Puedes ejecutar este programa en tu computadora?",
+    "context": "technology",
+    "difficulty": "intermediate",
+    "audio_file": "run_technology_001.mp3",
+    "context_note": "Software execution"
+  },
+  {
+    "sentence": "I run five miles every morning.",
+    "translation": "Corro cinco millas cada mañana.",
+    "context": "sports",
+    "difficulty": "beginner",
+    "audio_file": "run_sports_001.mp3",
+    "context_note": "Physical exercise"
+  }
+]

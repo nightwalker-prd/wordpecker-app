@@ -1,0 +1,62 @@
+[
+  {
+    "word": "كتاب",
+    "general": "مجموعة من الصفحات المطبوعة أو المخطوطة مجمعة معًا وتحتوي على معلومات أو قصص",
+    "contextual": {
+      "daily": "شيء نقرأه للمتعة أو التعلم",
+      "academic": "مصدر للمعلومات والبحث العلمي",
+      "business": "منتج يُباع في المكتبات أو عبر الإنترنت"
+    },
+    "difficulty": "beginner",
+    "part_of_speech": "اسم",
+    "pronunciation": "kitaab"
+  },
+  {
+    "word": "بيت",
+    "general": "مبنى يسكن فيه الناس",
+    "contextual": {
+      "daily": "المكان الذي نعيش فيه مع العائلة",
+      "business": "عقار يمكن شراؤه أو بيعه أو تأجيره",
+      "architecture": "هيكل معماري مصمم للسكن"
+    },
+    "difficulty": "beginner",
+    "part_of_speech": "اسم",
+    "pronunciation": "bayt"
+  },
+  {
+    "word": "مدرسة",
+    "general": "مؤسسة تعليمية يتعلم فيها الطلاب",
+    "contextual": {
+      "daily": "المكان الذي نذهب إليه للتعلم",
+      "education": "مؤسسة رسمية لتقديم التعليم الأساسي",
+      "business": "منظمة تقدم خدمات تعليمية"
+    },
+    "difficulty": "beginner",
+    "part_of_speech": "اسم",
+    "pronunciation": "madrasa"
+  },
+  {
+    "word": "طعام",
+    "general": "أي مادة نأكلها للحصول على الطاقة والتغذية",
+    "contextual": {
+      "daily": "ما نأكله في الإفطار أو الغداء أو العشاء",
+      "health": "المواد الغذائية التي نحتاجها للصحة",
+      "cooking": "المكونات المستخدمة في الطبخ"
+    },
+    "difficulty": "beginner",
+    "part_of_speech": "اسم",
+    "pronunciation": "ta'aam"
+  },
+  {
+    "word": "عمل",
+    "general": "نشاط أو مهمة نقوم بها لكسب المال أو تحقيق هدف",
+    "contextual": {
+      "business": "الوظيفة أو المهنة التي يمارسها الشخص",
+      "daily": "الأنشطة التي نقوم بها يوميًا",
+      "academic": "البحث أو الدراسة الجادة"
+    },
+    "difficulty": "intermediate",
+    "part_of_speech": "اسم",
+    "pronunciation": "amal"
+  }
+]

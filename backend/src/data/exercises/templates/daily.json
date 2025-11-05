@@ -1,0 +1,23 @@
+[
+  {
+    "type": "multiple_choice",
+    "question_template": "What does \"{word}\" mean?",
+    "distractors": [],
+    "context": "daily",
+    "difficulty": "beginner"
+  },
+  {
+    "type": "fill_in_blank",
+    "question_template": "I _____ to the store every day.",
+    "distractors": ["walk", "drive", "fly"],
+    "context": "daily",
+    "difficulty": "beginner"
+  },
+  {
+    "type": "matching",
+    "question_template": "Match the word \"{word}\" with its correct meaning.",
+    "distractors": [],
+    "context": "daily",
+    "difficulty": "beginner"
+  }
+]

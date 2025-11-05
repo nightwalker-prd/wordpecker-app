@@ -1,9 +1,9 @@
 import { Router, Request, Response } from 'express';
 import { validate } from 'echt';
-import { openaiRateLimiter } from '../../middleware/rateLimiter';
+import { openaiRateLimiter, defaultRateLimiter } from '../../middleware/rateLimiter';
 import { WordList } from '../lists/model';
 import { Word, IWord } from './model';
-import { wordAgentService } from './agent-service';
+import { wordServiceAdapter } from './adapter';
 import mongoose from 'mongoose';
 import { getUserLanguages } from '../../utils/getUserLanguages';
 import { 
@@ -41,7 +41,7 @@ router.post('/:listId/words', validate(addWordSchema), async (req, res) => {
       const userId = req.headers['user-id'] as string;
       if (!userId) throw new Error('User ID is required');
       const { baseLanguage, targetLanguage } = await getUserLanguages(userId);
-      return wordAgentService.generateDefinition(value, list.context || '', baseLanguage, targetLanguage);
+      return wordServiceAdapter.generateDefinition(value, list.context || '', baseLanguage, targetLanguage);
     })();
 
     const normalizedValue = value.toLowerCase().trim();
@@ -105,7 +105,7 @@ router.post('/validate-answer', validate(validateAnswerSchema), async (req: any,
     const userId = req.headers['user-id'] as string;
     if (!userId) return res.status(400).json({ message: 'User ID is required' });
     const { baseLanguage, targetLanguage } = await getUserLanguages(userId);
-    const result = await wordAgentService.validateAnswer(userAnswer, correctAnswer, context, baseLanguage, targetLanguage);
+    const result = await wordServiceAdapter.validateAnswer(userAnswer, correctAnswer, context, baseLanguage, targetLanguage);
     res.json(result);
   } catch (error) {
     res.status(500).json({ message: 'Internal server error' });
@@ -159,7 +159,7 @@ router.post('/word/:wordId/sentences', validate(wordContextSchema), async (req, 
 
     const userId = req.headers['user-id'] as string;
     const { baseLanguage, targetLanguage } = await getUserLanguages(userId);
-    const sentences = await wordAgentService.generateExamples(word.value, wordContext.meaning, context, baseLanguage, targetLanguage);
+    const sentences = await wordServiceAdapter.generateExamples(word.value, wordContext.meaning, context, baseLanguage, targetLanguage);
 
     res.json({ examples: sentences });
   } catch (error) {
@@ -183,7 +183,7 @@ router.post('/word/:wordId/similar', openaiRateLimiter, validate(wordContextSche
 
     const userId = req.headers['user-id'] as string;
     const { baseLanguage, targetLanguage } = await getUserLanguages(userId);
-    const similarWords = await wordAgentService.generateSimilarWords(word.value, wordContext.meaning, context, baseLanguage, targetLanguage);
+    const similarWords = await wordServiceAdapter.generateSimilarWords(word.value, wordContext.meaning, context, baseLanguage, targetLanguage);
 
     res.json({
       word: word.value,
@@ -218,7 +218,7 @@ router.post('/:listId/light-reading', openaiRateLimiter, validate(listIdSchema),
       return { value: word.value, meaning: wordContext?.meaning || '' };
     });
 
-    const reading = await wordAgentService.generateLightReading(wordsForReading, list?.context || 'General', baseLanguage, targetLanguage);
+    const reading = await wordServiceAdapter.generateLightReading(wordsForReading, list?.context || 'General', baseLanguage, targetLanguage);
     res.json(reading);
   } catch (error) {
     res.status(500).json({ message: 'Internal server error' });

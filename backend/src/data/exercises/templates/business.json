@@ -1,0 +1,30 @@
+[
+  {
+    "type": "multiple_choice",
+    "question_template": "What does \"{word}\" mean in the context of {context}?",
+    "distractors": [],
+    "context": "business",
+    "difficulty": "beginner"
+  },
+  {
+    "type": "fill_in_blank", 
+    "question_template": "Complete the sentence: I need to go to the _____ to deposit money.",
+    "distractors": ["store", "library", "park"],
+    "context": "daily",
+    "difficulty": "beginner"
+  },
+  {
+    "type": "sentence_completion",
+    "question_template": "Complete this sentence using \"{word}\": The company decided to _____",
+    "distractors": [],
+    "context": "business", 
+    "difficulty": "intermediate"
+  },
+  {
+    "type": "true_false",
+    "question_template": "True or False: A {word} is always related to money.",
+    "distractors": [],
+    "context": "general",
+    "difficulty": "beginner"
+  }
+]

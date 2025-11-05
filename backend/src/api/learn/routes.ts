@@ -4,7 +4,7 @@ import { WordList } from '../lists/model';
 import { Word } from '../words/model';
 import { UserPreferences } from '../preferences/model';
 import { QuestionType } from '../../types';
-import { learnAgentService } from './agent-service';
+import { learnServiceAdapter } from './adapter';
 import { getUserLanguages } from '../../utils/getUserLanguages';
 import { listIdSchema } from './schemas';
 
@@ -54,7 +54,7 @@ router.post('/:listId/start', validate(listIdSchema), async (req, res) => {
       getUserLanguages(userId || 'default')
     ]);
 
-    const exercises = await learnAgentService.generateExercises(
+    const exercises = await learnServiceAdapter.generateExercises(
       selectedWords, 
       list.context || 'General', 
       exerciseTypes, 
@@ -89,7 +89,7 @@ router.post('/:listId/more', validate(listIdSchema), async (req, res) => {
       getUserLanguages(userId || 'default')
     ]);
 
-    const exercises = await learnAgentService.generateExercises(
+    const exercises = await learnServiceAdapter.generateExercises(
       selectedWords, 
       list.context || 'General', 
       exerciseTypes, 

@@ -1,0 +1,23 @@
+[
+  {
+    "sentence": "أقرأ كتاباً جديداً كل أسبوع",
+    "translation": "I read a new book every week",
+    "context": "daily",
+    "difficulty": "beginner",
+    "audio_file": "kitaab_daily_001.mp3"
+  },
+  {
+    "sentence": "هذا الكتاب مفيد جداً للدراسة",
+    "translation": "This book is very useful for studying",
+    "context": "academic",
+    "difficulty": "intermediate",
+    "audio_file": "kitaab_academic_001.mp3"
+  },
+  {
+    "sentence": "اشتريت كتاباً من المكتبة",
+    "translation": "I bought a book from the bookstore",
+    "context": "business",
+    "difficulty": "beginner",
+    "audio_file": "kitaab_business_001.mp3"
+  }
+]

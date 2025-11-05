@@ -1,0 +1,23 @@
+[
+  {
+    "sentence": "بيتنا كبير وجميل",
+    "translation": "Our house is big and beautiful",
+    "context": "daily",
+    "difficulty": "beginner",
+    "audio_file": "bayt_daily_001.mp3"
+  },
+  {
+    "sentence": "يريد شراء بيت جديد",
+    "translation": "He wants to buy a new house",
+    "context": "business",
+    "difficulty": "intermediate",
+    "audio_file": "bayt_business_001.mp3"
+  },
+  {
+    "sentence": "البيت العربي التقليدي له فناء",
+    "translation": "The traditional Arab house has a courtyard",
+    "context": "architecture",
+    "difficulty": "advanced",
+    "audio_file": "bayt_architecture_001.mp3"
+  }
+]

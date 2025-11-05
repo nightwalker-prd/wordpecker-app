@@ -1,0 +1,26 @@
+[
+  {
+    "word": "money",
+    "meaning": "a medium of exchange in the form of coins and banknotes",
+    "similarity_score": 0.9,
+    "usage_note": "Very similar when 'bank' refers to financial institution"
+  },
+  {
+    "word": "finance",
+    "meaning": "the management of large amounts of money by governments or large companies",
+    "similarity_score": 0.8,
+    "usage_note": "Related to banking and financial services"
+  },
+  {
+    "word": "shore",
+    "meaning": "the land along the edge of a sea, lake, or other large body of water",
+    "similarity_score": 0.7,
+    "usage_note": "Similar when 'bank' refers to the edge of a river"
+  },
+  {
+    "word": "edge",
+    "meaning": "the outside limit of an object, area, or surface",
+    "similarity_score": 0.6,
+    "usage_note": "Generic term for border or boundary"
+  }
+]

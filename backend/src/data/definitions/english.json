@@ -1,0 +1,67 @@
+[
+  {
+    "word": "bank",
+    "general": "a financial institution that accepts deposits and channels money into lending activities",
+    "contextual": {
+      "business": "a financial institution providing commercial and investment services",
+      "geography": "the land alongside or sloping down to a river or lake",
+      "daily": "a place where you keep your money and can borrow money"
+    },
+    "difficulty": "beginner",
+    "part_of_speech": "noun",
+    "pronunciation": "/bæŋk/",
+    "audio_file": "bank.mp3"
+  },
+  {
+    "word": "run",
+    "general": "to move rapidly on foot, or to operate and manage something",
+    "contextual": {
+      "sports": "to move quickly by taking quick steps with each foot leaving the ground",
+      "business": "to operate, manage, or be in charge of a business or organization",
+      "technology": "to execute a program or process on a computer"
+    },
+    "difficulty": "beginner",
+    "part_of_speech": "verb",
+    "pronunciation": "/rʌn/",
+    "audio_file": "run.mp3"
+  },
+  {
+    "word": "capital",
+    "general": "wealth in the form of money or assets, or the most important city in a country",
+    "contextual": {
+      "business": "wealth in the form of money or other assets owned by a person or organization",
+      "geography": "the most important city or town of a country or region",
+      "finance": "money used to start or expand a business"
+    },
+    "difficulty": "intermediate",
+    "part_of_speech": "noun",
+    "pronunciation": "/ˈkæpɪtəl/",
+    "audio_file": "capital.mp3"
+  },
+  {
+    "word": "development",
+    "general": "the process of growing or making progress",
+    "contextual": {
+      "business": "the creation of new products, services, or business strategies",
+      "technology": "the process of creating software applications or systems",
+      "personal": "the process of personal growth and skill improvement"
+    },
+    "difficulty": "intermediate",
+    "part_of_speech": "noun",
+    "pronunciation": "/dɪˈveləpmənt/",
+    "audio_file": "development.mp3"
+  },
+  {
+    "word": "implementation",
+    "general": "the process of putting a plan or decision into effect",
+    "contextual": {
+      "business": "the execution of a business strategy or policy",
+      "technology": "the realization of an application or execution of a plan",
+      "project": "the stage where ideas and plans are turned into reality"
+    },
+    "difficulty": "advanced",
+    "part_of_speech": "noun",
+    "pronunciation": "/ˌɪmpləmənˈteɪʃən/",
+    "audio_file": "implementation.mp3"
+  }
+]

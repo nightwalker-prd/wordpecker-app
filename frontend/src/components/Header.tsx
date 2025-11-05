@@ -1,7 +1,8 @@
 import { Box, Container, Flex, Button, Icon, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { GiTreeBranch, GiBookshelf } from 'react-icons/gi';
-import { FaFeatherAlt, FaCog, FaCamera, FaGraduationCap } from 'react-icons/fa';
+import { FaFeatherAlt, FaCog, FaCamera, FaGraduationCap, FaCogs } from 'react-icons/fa';
+import { FEATURES } from '../config/constants';
 
 export const Header = () => {
   return (
@@ -32,6 +33,7 @@ export const Header = () => {
                 </Flex>
               </Button>
             </Link>
+            
             <Link to="/templates">
               <Button 
                 variant="ghost"
@@ -45,32 +47,57 @@ export const Header = () => {
                 Templates
               </Button>
             </Link>
-            <Link to="/describe">
-              <Button 
-                variant="ghost"
-                leftIcon={<Icon as={FaCamera} color="#FA8C16" />}
-                _hover={{
-                  transform: 'translateY(-2px)',
-                  color: '#FA8C16'
-                }}
-                transition="all 0.2s"
-              >
-                Vision Garden
-              </Button>
-            </Link>
-            <Link to="/learn-new-words">
-              <Button 
-                variant="ghost"
-                leftIcon={<Icon as={FaGraduationCap} color="#FA8C16" />}
-                _hover={{
-                  transform: 'translateY(-2px)',
-                  color: '#FA8C16'
-                }}
-                transition="all 0.2s"
-              >
-                Get New Words
-              </Button>
-            </Link>
+            
+            {/* LLM-dependent features */}
+            {FEATURES.VISION_GARDEN && (
+              <Link to="/describe">
+                <Button 
+                  variant="ghost"
+                  leftIcon={<Icon as={FaCamera} color="#FA8C16" />}
+                  _hover={{
+                    transform: 'translateY(-2px)',
+                    color: '#FA8C16'
+                  }}
+                  transition="all 0.2s"
+                >
+                  Vision Garden
+                </Button>
+              </Link>
+            )}
+            
+            {FEATURES.DYNAMIC_VOCABULARY && (
+              <Link to="/learn-new-words">
+                <Button 
+                  variant="ghost"
+                  leftIcon={<Icon as={FaGraduationCap} color="#FA8C16" />}
+                  _hover={{
+                    transform: 'translateY(-2px)',
+                    color: '#FA8C16'
+                  }}
+                  transition="all 0.2s"
+                >
+                  Get New Words
+                </Button>
+              </Link>
+            )}
+            
+            {/* Manual mode exclusive features */}
+            {FEATURES.ADMIN_PANEL && (
+              <Link to="/admin">
+                <Button 
+                  variant="ghost"
+                  leftIcon={<Icon as={FaCogs} color="#722ED1" />}
+                  _hover={{
+                    transform: 'translateY(-2px)',
+                    color: '#722ED1'
+                  }}
+                  transition="all 0.2s"
+                >
+                  Admin
+                </Button>
+              </Link>
+            )}
+            
             <Link to="/settings">
               <Button 
                 variant="ghost"
@@ -86,9 +113,16 @@ export const Header = () => {
             </Link>
           </Flex>
           <Box>
-            <Text color="green.500" fontWeight="bold">
-              WordPecker App
-            </Text>
+            <Flex align="center" gap={2}>
+              <Text color="green.500" fontWeight="bold">
+                WordPecker App
+              </Text>
+              {FEATURES.ADMIN_PANEL && (
+                <Text color="purple.400" fontSize="sm" fontWeight="normal">
+                  (Manual Mode)
+                </Text>
+              )}
+            </Flex>
           </Box>
         </Flex>
       </Container>

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ChakraProvider, Box } from '@chakra-ui/react';
 import theme from './theme';
+import { FEATURES } from './config/constants';
 import { Lists } from './pages/Lists';
 import { ListDetail } from './pages/ListDetail';
 import { Learn } from './pages/Learn';
@@ -13,6 +14,7 @@ import { GetNewWords } from './pages/GetNewWords';
 import { WordLearningSession } from './pages/WordLearningSession';
 import { ReadingPage } from './pages/ReadingPage';
 import { VoiceChat } from './pages/VoiceChat';
+import { AdminPanel } from './pages/AdminPanel';
 import { Header } from './components/Header';
 
 function App() {
@@ -30,11 +32,28 @@ function App() {
             <Route path="/templates" element={<TemplateLibrary />} />
             <Route path="/words/:wordId" element={<WordDetailPage />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="/describe" element={<ImageDescription />} />
-            <Route path="/learn-new-words" element={<GetNewWords />} />
-            <Route path="/learn-new-words/session" element={<WordLearningSession />} />
-            <Route path="/reading/:listId" element={<ReadingPage />} />
-            <Route path="/voice-chat/:listId" element={<VoiceChat />} />
+            
+            {/* LLM-dependent routes - only available in LLM mode */}
+            {FEATURES.VISION_GARDEN && (
+              <Route path="/describe" element={<ImageDescription />} />
+            )}
+            {FEATURES.DYNAMIC_VOCABULARY && (
+              <>
+                <Route path="/learn-new-words" element={<GetNewWords />} />
+                <Route path="/learn-new-words/session" element={<WordLearningSession />} />
+              </>
+            )}
+            {FEATURES.READING_GENERATION && (
+              <Route path="/reading/:listId" element={<ReadingPage />} />
+            )}
+            {FEATURES.VOICE_CHAT && (
+              <Route path="/voice-chat/:listId" element={<VoiceChat />} />
+            )}
+            
+            {/* Manual mode exclusive routes */}
+            {FEATURES.ADMIN_PANEL && (
+              <Route path="/admin" element={<AdminPanel />} />
+            )}
           </Routes>
         </Box>
       </Router>

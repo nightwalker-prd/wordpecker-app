@@ -1,0 +1,26 @@
+[
+  {
+    "sentence": "I need to go to the bank to deposit my paycheck.",
+    "translation": "Necesito ir al banco para depositar mi cheque de pago.",
+    "context": "daily",
+    "difficulty": "beginner",
+    "audio_file": "bank_daily_001.mp3",
+    "context_note": "Common everyday banking activity"
+  },
+  {
+    "sentence": "The bank of the river was covered with beautiful flowers.",
+    "translation": "La orilla del río estaba cubierta de hermosas flores.",
+    "context": "geography",
+    "difficulty": "beginner",
+    "audio_file": "bank_geography_001.mp3",
+    "context_note": "Natural landscape description"
+  },
+  {
+    "sentence": "The investment bank helped the company go public.",
+    "translation": "El banco de inversión ayudó a la empresa a salir a bolsa.",
+    "context": "business",
+    "difficulty": "advanced",
+    "audio_file": "bank_business_001.mp3",
+    "context_note": "Financial services context"
+  }
+]
